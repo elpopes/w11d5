@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PokemonItems from './PokemonItems';
 import EditPokemonForm from './EditPokemonForm';
 import ItemForm from './ItemForm';
@@ -10,6 +10,19 @@ const PokemonDetail = () => {
   const pokemon = useSelector(state => state.pokemon[pokemonId]);
   const [showEditPokeForm, setShowEditPokeForm] = useState(false);
   const [editItemId, setEditItemId] = useState(null);
+
+
+
+  // WE WERE HERE
+
+  // const pokeDeets = (id) => (state) => {
+  //   const dispatch = useDispatch();
+  //   const poke = Object.values(state.id).find(pokemon)
+  //   return fetch("api/pokemonId")
+  //     .then((res) => {res.json()})
+  //     .then((poke) => {dispatch(addOnePokemon(poke))})
+    
+  // }
 
   useEffect(() => {
     setShowEditPokeForm(false);
